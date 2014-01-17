@@ -2,7 +2,7 @@ module Doorkeeper
   module Models
     module Expirable
       def expired?
-        expires_in && Time.now > expired_time
+        expires_in && Time.zone.now > expired_time
       end
 
       def expired_time
