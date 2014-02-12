@@ -5,7 +5,7 @@ module Doorkeeper
     include ActionController::Instrumentation
 
     def create
-      Rails.logger.info "!!! #{self.inspect}"
+      raise self.inspect
       response = strategy.authorize
       self.headers.merge! response.headers
       self.response_body = response.body.to_json
