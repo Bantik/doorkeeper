@@ -9,8 +9,9 @@ module Doorkeeper
       self.headers.merge! response.headers
       self.response_body = response.body.to_json
       self.status        = response.status
-    rescue Errors::DoorkeeperError => e
-      handle_token_exception e
+      raise self.inspect
+    # rescue Errors::DoorkeeperError => e
+    #   handle_token_exception e
     end
 
   private
