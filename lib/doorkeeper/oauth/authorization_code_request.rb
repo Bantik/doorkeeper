@@ -58,6 +58,8 @@ module Doorkeeper
       end
 
       def validate_redirect_uri
+        p "Grant redirect uri: #{grant.redirect_url}"
+        p "Auth redirect uri: #{redirect_url}"
         grant.redirect_uri == redirect_uri
       end
     end
