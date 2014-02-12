@@ -9,7 +9,7 @@ module Doorkeeper
       self.headers.merge! response.headers
       self.response_body = response.body.to_json
       self.status        = response.status
-      render :text => self.inspect
+      Rails.logger.info "!!! #{self.inspect}"
     # rescue Errors::DoorkeeperError => e
     #   handle_token_exception e
     end
